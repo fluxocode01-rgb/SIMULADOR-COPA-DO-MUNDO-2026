@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copa do Mundo 2026 - Simulador Completo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <div class="badge-hex">HEXA 2026</div>
+        <h1>COPA DO MUNDO <span>2026</span></h1>
+        <p>
+          Simulador oficial completo: 12 Grupos e chaveamento real de Mata-Mata.
+        </p>
+        <div class="header-decorations">
+          <span class="star">★</span><span class="star">★</span
+          ><span class="star">★</span><span class="star">★</span
+          ><span class="star">★</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- FASE DE GRUPOS -->
+      <section class="fase-container">
+        <h2 class="section-title">Fase de Grupos (48 Seleções)</h2>
+        <div class="grid-grupos" id="render-grupos"></div>
+      </section>
+
+      <!-- FASE ELIMINATÓRIA COMPLETA -->
+      <section class="fase-container mata-mata">
+        <h2 class="section-title text-yellow">
+          Mata-Mata (Chaveamento Dinâmico Completo)
+        </h2>
+
+        <div class="chaveamento">
+          <!-- OITAVAS DE FINAL (8 JOGOS) -->
+          <div class="fase-bloco" id="bloco-oitavas">
+            <h4>Oitavas de Final</h4>
+
+            <!-- Jogo 1 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-1">1º Grupo A</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-1-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-2">2º Grupo B</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-1-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 2 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-3">1º Grupo B</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-2-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-4">2º Grupo A</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-2-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 3 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-5">1º Grupo C</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-3-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-6">2º Grupo D</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-3-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 4 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-7">1º Grupo D</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-4-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-8">2º Grupo C</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-4-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 5 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-9">1º Grupo E</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-5-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-10">2º Grupo F</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-5-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 6 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-11">1º Grupo F</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-6-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-12">2º Grupo E</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-6-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 7 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-13">1º Grupo G</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-7-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-14">2º Grupo H</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-7-f"
+                />
+              </div>
+            </div>
+            <!-- Jogo 8 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="oit-15">1º Grupo H</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-8-c"
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="oit-16">2º Grupo G</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="moit-8-f"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- QUARTAS DE FINAL (4 JOGOS) -->
+          <div class="fase-bloco" id="bloco-quartas">
+            <h4>Quartas de Final</h4>
+            <!-- Jogo 1 das Quartas -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="qua-1">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-1-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="qua-2">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-1-f"
+                  disabled
+                />
+              </div>
+            </div>
+            <!-- Jogo 2 das Quartas -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="qua-3">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-2-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="qua-4">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-2-f"
+                  disabled
+                />
+              </div>
+            </div>
+            <!-- Jogo 3 das Quartas -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="qua-5">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-3-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="qua-6">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-3-f"
+                  disabled
+                />
+              </div>
+            </div>
+            <!-- Jogo 4 das Quartas -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="qua-7">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-4-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="qua-8">Aguardando Oitavas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mqua-4-f"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- SEMIFINAL (2 JOGOS) -->
+          <div class="fase-bloco" id="bloco-semi">
+            <h4>Semifinal</h4>
+            <!-- Semi 1 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="semi-1">Aguardando Quartas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="msemi-1-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="semi-2">Aguardando Quartas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="msemi-1-f"
+                  disabled
+                />
+              </div>
+            </div>
+            <!-- Semi 2 -->
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="semi-3">Aguardando Quartas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="msemi-2-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="semi-4">Aguardando Quartas...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="msemi-2-f"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- FINAL (1 JOGO) -->
+          <div class="fase-bloco" id="bloco-final">
+            <h4>Grande Final</h4>
+            <div class="mm-box">
+              <div class="mm-linha-time">
+                <span class="time" id="fin-1">Aguardando Semi...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mfin-1-c"
+                  disabled
+                />
+              </div>
+              <div class="mm-divisor-vs">vs</div>
+              <div class="mm-linha-time">
+                <span class="time" id="fin-2">Aguardando Semi...</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="placar-input mm-input"
+                  id="mfin-1-f"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPEÃO -->
+        <div class="campeao-wrapper">
+          <div class="trophy">🏆</div>
+          <h3>CAMPEÃO DO MUNDO 2026</h3>
+          <div id="campeao-final">?</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

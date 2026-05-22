@@ -1,0 +1,265 @@
+:root {
+  --verde-br: #009c3b;
+  --amarelo-br: #ffdf00;
+  --azul-br: #002277;
+  --dark-bg: #0b0f19;
+  --card-light: #ffffff;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Urbanist", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    linear-gradient(135deg, rgba(11, 15, 25, 0.96), rgba(0, 34, 119, 0.92)),
+    url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920")
+      center/cover no-repeat fixed;
+  font-family: var(--font-body);
+  color: #f3f4f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-header {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 50px 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.badge-hex {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--verde-br), var(--amarelo-br));
+  color: var(--azul-br);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.main-header h1 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: #ffffff;
+}
+
+.main-header h1 span {
+  background: linear-gradient(135deg, var(--amarelo-br), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-header p {
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--verde-br);
+  padding-left: 15px;
+}
+
+.text-yellow {
+  border-left-color: var(--amarelo-br);
+}
+
+/* GRID DE 12 GRUPOS */
+.grid-grupos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card-grupo {
+  background: var(--card-light);
+  color: #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-grupo h3 {
+  font-family: var(--font-heading);
+  color: var(--azul-br);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.tabela-mini table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.tabela-mini th {
+  background: #f3f4f6;
+  padding: 6px;
+  color: #4b5563;
+}
+
+.tabela-mini td {
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela-mini td.pnt {
+  font-weight: 700;
+  color: var(--verde-br);
+}
+
+.confronto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.time {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.time.casa {
+  text-align: right;
+  flex: 1;
+  margin-right: 8px;
+}
+.time.fora {
+  text-align: left;
+  flex: 1;
+  margin-left: 8px;
+}
+
+.placar-input {
+  width: 38px;
+  height: 32px;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  color: var(--azul-br);
+}
+
+/* DESIGN DO MATA-MATA FLUIDO */
+.chaveamento {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.fase-bloco {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fase-bloco h4 {
+  font-family: var(--font-heading);
+  text-align: center;
+  color: var(--amarelo-br);
+}
+
+.mm-box {
+  background: rgba(11, 15, 25, 0.8);
+  border-left: 4px solid var(--verde-br);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mm-linha-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mm-box .time {
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.mm-divisor-vs {
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.mm-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 40px;
+  height: 32px;
+}
+
+/* Inputs desabilitados ficam opacos para indicar bloqueio */
+.mm-input:disabled {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: transparent;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.campeao-wrapper {
+  max-width: 450px;
+  margin: 40px auto 0 auto;
+  background: linear-gradient(135deg, var(--azul-br), #001144);
+  border: 3px solid var(--amarelo-br);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.trophy {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+#campeao-final {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .chaveamento {
+    flex-direction: column;
+  }
+}
